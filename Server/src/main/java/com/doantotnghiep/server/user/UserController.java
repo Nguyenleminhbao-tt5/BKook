@@ -23,16 +23,6 @@ public class UserController {
     @Autowired
     private JwtService jwtService;
 
-    @GetMapping("/all")
-    public List<User> getAllUser(HttpServletRequest request) throws ResponseException {
-        try {
-            User user = jwtService.getUserFromHeader(request);
-            return userService.getAllUser();
-        } catch (Exception e) {
-            throw new ResponseException(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
-        }
-    }
-
     @GetMapping("/me")
     public User getMe(HttpServletRequest request) throws ResponseException {
         try {
