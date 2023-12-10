@@ -1,15 +1,15 @@
 
 
 import React from "react"
-import { Text,View, StyleSheet, ScrollView, ImageBackground } from "react-native"
-import { Ingredients } from "./data"
+import { Text,View, StyleSheet, ScrollView, Image, ImageBackground } from "react-native"
+import { Ingredients, recipe } from "./data"
 import { MagnifyingGlassIcon } from "react-native-heroicons/solid"
 import { ButtonComponent } from "../../Components/Button"
-import { CarouselCards } from "../../Components/Carousel"
+// import { CarouselCards } from "../../Components/Carousel"
 import { GridView } from "../../Components/GridView"
-import { FoodBoxType1, FoodBoxType2 } from "../../Components/FoodBox"
+import { FoodBoxType1, FoodBoxType2, FoodBoxType3, FoodBoxType4, FoodBoxType5 } from "../../Components/FoodBox"
 import { IngredientTag } from "../../Components/IngredientTag"
-
+import {CarouselCards} from '../../Components/Carousel'
 
 const data = [
     {
@@ -67,10 +67,41 @@ export const Inspiration = () => {
                         }
                     </View>    
                 </View>
+                <View className='flex-row w-full'>
+                    <CarouselCards 
+                        data={recipe} 
+                        renderItem={(item) => <FoodBoxType1 recip={item} />}
+                    />
+                </View>
+                <View>
+                    <ButtonComponent
+                        title={"Gợi ý khác"}
+                        icon={<MagnifyingGlassIcon size={26} color={'white'}/>}
+                        bgColor="#8C8C8C"
+                        width="w-full"
+                        height="h-10"
+                    />
+                </View>
+            </View>
+            <View className="flex-1 justify-start items-start">
+                <View className="pt-2 m-3">
+                    <Text style={styles.title}>Khám phá xem thứ gì đang trong mùa nào</Text>
+                </View>
                 <View className='w-full'>
-                    <CarouselCards data={slider}>
-                        <FoodBoxType1 />
-                    </CarouselCards>
+                    <CarouselCards 
+                        data={recipe} 
+                        renderItem={(item) => <FoodBoxType2 />}
+                    />
+                </View>
+                <ButtonComponent title={"Gợi ý khác"} icon={<MagnifyingGlassIcon size={26} color={'white'}/>} bgColor="#8C8C8C" width="w-full" height="h-10"/>
+            </View>
+            <View className="flex-column justify-start items-start">
+                <View className="pt-2 m-3">
+                    <Text style={styles.title}>Bạn đang thèm món gì?</Text>
+                    <Text style={styles.subTitle}>Không chắc? tiếp tục tạo bất ngờ</Text> 
+                </View>
+                <View className='mx-3'>
+                    <FoodBoxType3 />
                 </View>
                 <ButtonComponent 
                     title={"Gợi ý khác"} 
@@ -81,15 +112,39 @@ export const Inspiration = () => {
                 />
             </View>
             <View className="flex-1 justify-start items-start">
+                <View className='mx-3 mb-3'>
+                    <View className="py-3">
+                        <Text style={styles.title}>Món mới nhất</Text>
+                    </View>
+                    <View className='w-full'>
+                        <GridView data={data} cols={2} renderItem={(item) =>
+                            <FoodBoxType4 />
+                        } />
+                    </View>
+                </View>
+            </View>
+            <View className="flex-column justify-start items-start mb-3">
                 <View className="pt-2 m-3">
-                    <Text style={styles.title}>Khám phá xem thứ gì đang trong mùa nào</Text>
+                    <Text style={styles.title}>Bí quyết nấu ăn</Text>
                 </View>
                 <View className='w-full'>
-                    <CarouselCards data={slider}>
-                        <FoodBoxType2 />
-                    </CarouselCards>
+                    <CarouselCards 
+                        data={recipe} 
+                        renderItem={(item) => <FoodBoxType5 />}
+                    />
                 </View>
-                <ButtonComponent title={"Gợi ý khác"} icon={<MagnifyingGlassIcon size={26} color={'white'}/>} bgColor="#8C8C8C" width="w-full" height="h-10"/>
+            </View>
+            <View className="flex-1 justify-start items-start">
+                <View className='mx-3 mb-3'>
+                    <View className="py-3">
+                        <Text style={styles.title}>Món mới nhất</Text>
+                    </View>
+                    <View className='w-full'>
+                        <GridView data={data} cols={2} renderItem={(item) =>
+                            <FoodBoxType4 />
+                        } />
+                    </View>
+                </View>
             </View>
         </ScrollView>
 
@@ -114,8 +169,7 @@ const styles = StyleSheet.create({
         paddingTop: 40
     },
     itemContainer: {
-        height: 120,
-        margin: 3,
+        height: 230,
         justifyContent: 'center',
         alignItems: 'center',
     },
