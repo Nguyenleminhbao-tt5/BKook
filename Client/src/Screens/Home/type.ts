@@ -1,6 +1,7 @@
 export type IngredientType = {
     name: string,
-    iconUrl: string
+    iconUrl?: string,
+    onClick?: () => string[]
 }
 
 export type RecipeType = {
@@ -12,4 +13,10 @@ export type RecipeType = {
     clap: number,
     imgUrl: string,
     ingredient: string[]
+}
+
+export type RecipeTagType = {
+    name: string,
+    recipeList: RecipeType[],
+    thumbnail: string
 }

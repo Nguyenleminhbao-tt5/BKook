@@ -13,8 +13,6 @@ import { Inspiration } from "./Inspiration";
 import { Network } from "./Network";
 
 const Toptabs = createMaterialTopTabNavigator();
-const Tab = createMaterialTopTabNavigator();
-
 
 export interface IHomeProps {
   data: User | undefined;
@@ -24,7 +22,7 @@ export interface IHomeProps {
 export const Home = (props: IHomeProps) => {
   const { data, isLoading } = props;
   return (
-    <SafeAreaView className={`flex-1 bg-[${themeColors.bgColor}]`}>
+    <SafeAreaView className={`flex-1 bg-[${themeColors.bgColor}] pb-12`}>
       <View className="m-3 flex-row justify-between items-center">
         <ImageComponent source={{uri: "https://source.unsplash.com/random"}} variant="circle" size="xs"/>
         <View className="w-3/4 flex-1 flex-row justify-start items-center mx-3 bg-[#8C8C8C] px-2.5 h-10 rounded-lg">

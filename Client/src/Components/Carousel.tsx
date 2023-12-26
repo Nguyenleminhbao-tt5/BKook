@@ -65,14 +65,13 @@ const ITEM_WIDTH = Dimensions.get('window').width
 
 // Define the component props
 interface CarouselProps {
-  data: RecipeType[];
-  renderItem: (item: RecipeType) => React.ReactNode;
+  data: any[];
+  renderItem: (item: any) => React.ReactNode;
 }
 
 export const CarouselCards: React.FC<CarouselProps> = ({ data, renderItem  }) => {
   const [activeSlide, setActiveSlide] = React.useState(0);
 
-  // Define the renderItem function
   const renderCarouselItem  = ({ item }: { item: RecipeType }) => (
       <View className='mx-3'>
           {renderItem(item)}
