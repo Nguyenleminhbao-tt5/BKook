@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { IngredientType, RecipeTagType, RecipeType } from "./type";
 
 export const Ingredients: IngredientType[] = [
@@ -335,5 +336,34 @@ export const tags: RecipeTagType[] = [
                 ingredient: ['beef', 'onion']
             },
         ]
+=======
+import { IngredientType } from "./type";
+
+
+export const Ingredients: IngredientType[] = [
+    {
+        name: 'Pasta',
+        iconUrl: '#'
+    },
+    {
+        name: 'Bacon',
+        iconUrl: '#'
+    },
+    {
+        name: 'Rice',
+        iconUrl: '#'
+    },
+    {
+        name: 'Potato',
+        iconUrl: '#'
+    },
+    {
+        name: 'Spinach',
+        iconUrl: '#'
+    },
+    {
+        name: 'Tofu',
+        iconUrl: '#'
+>>>>>>> minhbao-dev
     }
 ]

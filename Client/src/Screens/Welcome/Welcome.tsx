@@ -11,8 +11,12 @@ export const Welcome = (props: {
 }) => {
   return (
     <View style={styles.container}>
+<<<<<<< HEAD
       <OnboardFlow
         onDone={() => props.onNavigate(RootScreens.MAIN)}
+=======
+      {/* <OnboardFlow
+>>>>>>> minhbao-dev
         pages={[
           {
             title: "BKook",
@@ -34,8 +38,13 @@ export const Welcome = (props: {
           },
         ]}
         type={"fullscreen"}
+<<<<<<< HEAD
       />
       {/* <Button onPress={() => props.onNavigate(RootScreens.MAIN)}>
+=======
+      /> */}
+      <Button onPress={() => props.onNavigate(RootScreens.MAIN)}>
+>>>>>>> minhbao-dev
         {i18n.t(LocalizationKey.START)}
       </Button> */}
     </View>

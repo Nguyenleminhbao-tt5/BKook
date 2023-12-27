@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useRef } from "react"
+=======
+import React from "react"
+>>>>>>> minhbao-dev
 import { View, StyleSheet } from "react-native"
 
 
@@ -12,6 +16,7 @@ export const GridView = <T extends any>(props: GridViewProps<T>) => {
 
     const {data, renderItem, cols = 2} = props
 
+<<<<<<< HEAD
     const ref = useRef<any>()
     
     const rowCount = () => {
@@ -33,6 +38,16 @@ export const GridView = <T extends any>(props: GridViewProps<T>) => {
                             <View className={`bg-[#323232] mx-1 my-1`}
                                 style={{borderRadius: 8}}
                             >
+=======
+    return (
+        <View style={styles.container}>
+            {
+                data.map((item, index) => {
+                    console.log(index)
+                    return (
+                        <View key={index} style={{width: 100 / cols + '%'}} >
+                            <View className={`${index % cols === 0 ? 'ml-2' : index % cols === cols - 1 ? 'mr-2' : 'mx-2'} bg-red-500`}>
+>>>>>>> minhbao-dev
                                 {renderItem(item)}
                             </View>
                         </ View>
