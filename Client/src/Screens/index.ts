@@ -2,5 +2,7 @@ export enum RootScreens {
   MAIN = "Main",
   WELCOME = "Welcome",
   CATEGORY = "Category",
-  RECENT_CATEGORY = "RecentCategory"
+  RECENT_CATEGORY = "RecentCategory",
+  DETAIL = 'Detail',
+  PRODUCTS = 'Products'
 }
