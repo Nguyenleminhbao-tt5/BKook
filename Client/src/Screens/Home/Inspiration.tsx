@@ -7,7 +7,7 @@ import { MagnifyingGlassIcon } from "react-native-heroicons/solid"
 import { ButtonComponent } from "../../Components/Button"
 // import { CarouselCards } from "../../Components/Carousel"
 import { GridView } from "../../Components/GridView"
-import { FoodBoxType1, FoodBoxType2, FoodBoxType3, FoodBoxType4, FoodBoxType5 } from "@/Components/FoodBoxType1"
+import { FoodBoxType1, FoodBoxType2, FoodBoxType3, FoodBoxType4, FoodBoxType5 } from "@/Components/FoodBox"
 import { IngredientTag } from "../../Components/IngredientTag"
 import {CarouselCards} from '../../Components/Carousel'
 import { useNavigation } from "@react-navigation/native"
@@ -59,7 +59,7 @@ export const Inspiration = () => {
                         {
                             Ingredients.map((ingredient, index) => (
                                 <IngredientTag name={ingredient.name} iconUrl={ingredient.iconUrl} key={index}
-                                    onClick={() => handlePress(ingredient.name)}
+                                    onClick={() => handlePress(ingredient.name)  }
                                 />
                             ))
                         }
@@ -78,7 +78,7 @@ export const Inspiration = () => {
                         bgColor="#8C8C8C"
                         width="w-full"
                         height="h-10"
-                        onPress={() => navigattion.navigate('Products')}
+                        onPress={() => navigattion.navigate('Products' as never)}
                     />
                 </View>
             </View>
