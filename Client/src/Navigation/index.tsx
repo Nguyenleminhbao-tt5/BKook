@@ -5,10 +5,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { MainNavigator } from "./Main";
 import { WelcomeContainer } from "@/Screens/Welcome";
 import { RootScreens } from "@/Screens";
+import { RecentCategory } from "@/Screens/Category/RecentCategory";
+import { Category } from "@/Screens/Category/Category"; 
 
 export type RootStackParamList = {
   [RootScreens.MAIN]: undefined;
   [RootScreens.WELCOME]: undefined;
+  [RootScreens.CATEGORY]: undefined;
+  [RootScreens.RECENT_CATEGORY]: undefined;
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -26,6 +30,16 @@ const ApplicationNavigator = () => {
         <RootStack.Screen
           name={RootScreens.MAIN}
           component={MainNavigator}
+          options={{}}
+        />
+         <RootStack.Screen
+          name={RootScreens.CATEGORY}
+          component={Category}
+          options={{}}
+        />
+        <RootStack.Screen
+          name={RootScreens.RECENT_CATEGORY}
+          component={RecentCategory}
           options={{}}
         />
       </RootStack.Navigator>
