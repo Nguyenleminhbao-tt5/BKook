@@ -56,11 +56,13 @@ export const Register = () => {
           >
             <Text className=" text-xl text-white">Register</Text>
           </TouchableOpacity>
-          <Pressable onPress={() => navigation.navigate(RootScreens.LOGIN)}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(RootScreens.LOGIN)}
+          >
             <Text className="text-sm text-[#F66033] my-2">
               Already have an account? Login
             </Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

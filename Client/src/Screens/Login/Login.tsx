@@ -64,11 +64,13 @@ export const Login = () => {
               <Text className=" text-lg text-white">Login with Google</Text>
             </TouchableOpacity>
           </View>
-          <Pressable onPress={() => navigation.navigate(RootScreens.REGISTER)}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(RootScreens.REGISTER)}
+          >
             <Text className=" text-sm  text-[#F66033]">
               Don't have account? Register
             </Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
