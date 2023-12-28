@@ -17,6 +17,7 @@
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.17",
     "@reduxjs/toolkit": "^1.8.5",
+    "clarifai-nodejs-grpc": "^9.11.4",
     "eas-cli": "^5.7.0",
     "expo": "^49.0.21",
     "expo-camera": "~13.2.1",

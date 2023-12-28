@@ -11,7 +11,7 @@ export const Welcome = (props: {
 }) => {
   return (
     <View style={styles.container}>
-      <OnboardFlow
+      {/* <OnboardFlow
         onDone={() => props.onNavigate(RootScreens.MAIN)}
         pages={[
           {
@@ -34,10 +34,10 @@ export const Welcome = (props: {
           },
         ]}
         type={"fullscreen"}
-      />
-      {/* <Button onPress={() => props.onNavigate(RootScreens.MAIN)}>
+      /> */}
+      <Button onPress={() => props.onNavigate(RootScreens.MAIN)}>
         {i18n.t(LocalizationKey.START)}
-      </Button> */}
+      </Button> 
     </View>
   );
 };

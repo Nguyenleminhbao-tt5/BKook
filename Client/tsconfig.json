@@ -8,5 +8,5 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["app.d.ts","**/*.ts", "**/*.tsx"]
+  "include": ["app.d.ts","**/*.ts", "**/*.tsx", "src/Screens/Scan/FoodRecognition.js", "test.js"]
 }

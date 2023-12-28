@@ -2,14 +2,14 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeContainer } from "@/Screens/Home";
 import { CategoryContainer } from "@/Screens/Category/CategoryContainer";
-
+import { ScanContainer } from "@/Screens/Scan/ScanContainer";
 
 const Tab = createBottomTabNavigator();
 
 // @refresh reset
 export const MainNavigator = () => {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="Home"
         component={HomeContainer}
@@ -26,8 +26,15 @@ export const MainNavigator = () => {
           tabBarLabelPosition: "beside-icon",
         }}
       />
+      <Tab.Screen
+        name="Scan"
+        component={ScanContainer}
+        options={{
+          tabBarIconStyle: { display: "none" },
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
 
-      
       <Tab.Screen
         name="Home 1"
         component={HomeContainer}
@@ -39,4 +46,3 @@ export const MainNavigator = () => {
     </Tab.Navigator>
   );
 };
-
