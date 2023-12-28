@@ -53,6 +53,7 @@ export const Seasion = () => {
         <View style={styles.header}>
             <Pressable onPress={() => navigation.navigate("Home")}>
               <ArrowLeftIcon color={'white'}/>
+              
             </Pressable>
             <Text style={styles.headerText}>Đang mùa</Text>
         </View>

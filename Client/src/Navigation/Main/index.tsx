@@ -5,36 +5,46 @@ import { CategoryContainer } from "@/Screens/Category/CategoryContainer";
 import { Seasion } from "@/Screens/Home/Seasion";
 import { BottomTabBar } from '@react-navigation/bottom-tabs'
 
+import { ScanContainer } from "@/Screens/Scan/ScanContainer";
+import { LoginContainer } from "../../Screens/Login";
+import { RegisterContainer } from "../../Screens/Register";
 
 const Tab = createBottomTabNavigator();
 
 // @refresh reset
 export const MainNavigator = () => {
+
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}} tabBar={props => <BottomTabBar {...props} state={{...props.state, routes: props.state.routes.slice(0,4)}}></BottomTabBar>}>
+    <Tab.Navigator  tabBar={props => <BottomTabBar {...props} state={{...props.state, routes: props.state.routes.slice(0,4)}}></BottomTabBar>}>
       <Tab.Screen
         name="Home"
         component={HomeContainer}
         options={{
-          tabBarIconStyle: { display: "none" },
-          tabBarLabelPosition: "beside-icon",
+          tabBarLabel: "Home",
         }}
       />
       <Tab.Screen
         name="Search"
         component={CategoryContainer}
         options={{
-          tabBarIconStyle: { display: "none" },
-          tabBarLabelPosition: "beside-icon",
+          tabBarLabel: "Search",
+        }}
+      />
+      <Tab.Screen
+        name="Scan"
+        component={ScanContainer}
+        options={{
+          tabBarLabel: "Scan",
 
         }}
       />
+
       <Tab.Screen
         name="Post"
         component={Seasion}
         options={{
-          tabBarIconStyle: { display: "none" },
-          tabBarLabelPosition: "beside-icon",    
+          tabBarLabel: "Post",
+  
         }}
       />
       <Tab.Screen
@@ -53,7 +63,22 @@ export const MainNavigator = () => {
           tabBarLabelPosition: "beside-icon",    
         }}
       />
+      <Tab.Screen
+        name="Login"
+        component={LoginContainer}
+        options={{
+          tabBarIconStyle: { display: "none" },
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
+      <Tab.Screen
+        name="Register"
+        component={RegisterContainer}
+        options={{
+          tabBarIconStyle: { display: "none" },
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
     </Tab.Navigator>
   );
 };
-

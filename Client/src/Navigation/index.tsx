@@ -12,6 +12,9 @@ import { ListProduct } from "../Screens/Home/ListProduct";
 import { HomeContainer } from "../Screens/Home";
 import { Text } from "react-native";
 import { Seasion } from "@/Screens/Home/Seasion";
+import { LoginContainer } from "@/Screens/Login/LoginContainer";
+import { RegisterContainer } from "../Screens/Register";
+import { SettingContainer } from "../Screens/Setting";
 
 export type RootStackParamList = {
   [RootScreens.MAIN]: undefined;
@@ -21,6 +24,9 @@ export type RootStackParamList = {
   [RootScreens.DETAIL]: undefined;
   [RootScreens.PRODUCTS]: undefined;
   [RootScreens.SEASION]: undefined;
+  [RootScreens.LOGIN]: undefined;
+  [RootScreens.REGISTER]: undefined;
+  [RootScreens.SETTING]: undefined;
 
 };
 
@@ -36,6 +42,19 @@ const ApplicationNavigator = () => {
           <RootStack.Screen
             name={RootScreens.WELCOME}
             component={WelcomeContainer}
+          />
+          <RootStack.Screen
+            name={RootScreens.LOGIN}
+            component={LoginContainer}
+          />
+          <RootStack.Screen
+            name={RootScreens.SETTING}
+            component={SettingContainer}
+          />
+          <RootStack.Screen
+            name={RootScreens.REGISTER}
+            component={RegisterContainer}
+            options={{}}
           />
           <RootStack.Screen
             name={RootScreens.MAIN}
@@ -62,11 +81,6 @@ const ApplicationNavigator = () => {
             component={RecentCategory}
             options={{}}
           />
-          {/* <RootStack.Screen
-            name={RootScreens.SEASION}
-            component={Seasion}
-            options={{}}
-          /> */}
         </RootStack.Navigator>
       </NavigationContainer>
     </>

@@ -93,7 +93,7 @@ export const FoodBoxType2:React.FC<FoodBoxType2Props> = (props) => {
                 borderWidth: 1,
                 borderRadius: 8,
                 borderColor: 'white',
-                backgroundColor: '#2f2f2f',
+                backgroundColor: '#1B1B1B',
             }}
         >
             <ImageBackground 
@@ -177,7 +177,7 @@ export const FoodBoxType3: React.FC<FoodBoxType3Props> = (props) => {
                 borderWidth: 1,
                 borderRadius: 8,
                 borderColor: 'white',
-                backgroundColor: '#2f2f2f'
+                backgroundColor: '#1B1B1B'
             }}
         >
             <View className='w-full h-full'>

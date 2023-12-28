@@ -30,7 +30,7 @@ export const GridView = <T extends any>(props: GridViewProps<T>) => {
                 data.map((item, index) => {
                     return (
                         <View key={index} style={{width: 100 / cols + '%', height: 100 / rowCount() + '%'}} >
-                            <View className={`bg-[#323232] mx-1 py-1 h-full`}
+                            <View className={`bg-[#1B1B1B] mx-1 py-1 h-full`}
                                 style={{borderRadius: 8}}
                             >
                                 {renderItem(item)}
