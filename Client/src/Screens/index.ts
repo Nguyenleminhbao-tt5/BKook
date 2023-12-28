@@ -4,5 +4,7 @@ export enum RootScreens {
   DETAIL = 'Detail',
   PRODUCTS = 'Products',
   CATEGORY = "Category",
-  RECENT_CATEGORY = "RecentCategory"
+  RECENT_CATEGORY = "RecentCategory",
+  DETAIL = 'Detail',
+  PRODUCTS = 'Products'
 }

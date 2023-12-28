@@ -23,12 +23,13 @@ export const Inspiration = () => {
 
     const handlePress = (name: string) => {
         if (refTag.current.includes(name)) {
-            refTag.current = refTag.current.filter(i => i !== name)
+            refTag.current = refTag.current.filter((i:any)  => i !== name)
         }
         else if (refTag.current.length < 2) {
             refTag.current = [...refTag.current, name]
         } 
         setTagList(refTag.current)
+        
     }   
 
     function filterRecipesByIngredients(tagsArray: RecipeTagType[], ingredientsArray: string[]) {
@@ -78,7 +79,7 @@ export const Inspiration = () => {
                     bgColor="#8C8C8C"
                     width="w-full"
                     height="h-10"
-                    onPress={() => navigattion.navigate('Products')}
+                    onPress={() => navigattion.navigate('Products' as never)}
                 />
 
             </View>

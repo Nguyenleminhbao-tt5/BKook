@@ -1,39 +1,13 @@
 Arguments: 
-<<<<<<< HEAD
-  C:\Program Files\nodejs\node.exe C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-page-view
-
-PATH: 
-  C:\Users\dell\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\dell\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Users\dell\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;D:\sqlite;C:\Program Files\apache-maven-3.9.4\bin;C:\Program Files\Java\jdk-17.0.1\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\CMake\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Users\dell\Downloads\SDL2-devel-2.28.3-VC\SDL2-2.28.3\lib\x64;C:\Users\dell\AppData\Local\Programs\Python\Python311;C:\Users\dell\AppData\Local\Programs\Python\Python311\Scripts;C:\MinGW\bin;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\MinGW\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
-=======
   /home/nguyenleminhbao/.nvm/versions/node/v18.12.1/bin/node /home/nguyenleminhbao/.nvm/versions/node/v18.12.1/bin/yarn add @types/react-native-safe-area-context@4.0.0
 
 PATH: 
   /home/nguyenleminhbao/.rbenv/shims:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.rbenv/plugins/ruby-build/bin:/home/nguyenleminhbao/.rbenv/shims:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.nvm/versions/node/v18.12.1/bin:/home/nguyenleminhbao/.rbenv/shims:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.rbenv/plugins/ruby-build/bin:/home/nguyenleminhbao/.rbenv/shims:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.rbenv/bin:/home/nguyenleminhbao/.rvm/gems/ruby-3.2.0/bin:/home/nguyenleminhbao/.rvm/gems/ruby-3.2.0@global/bin:/home/nguyenleminhbao/.rvm/rubies/ruby-3.2.0/bin:/home/nguyenleminhbao/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/nguyenleminhbao/.rvm/bin:/home/nguyenleminhbao/.rvm/bin:/home/nguyenleminhbao/.rvm/bin
->>>>>>> minhbao-dev
 
 Yarn version: 
   1.22.19
 
 Node version: 
-<<<<<<< HEAD
-  16.20.0
-
-Platform: 
-  win32 x64
-
-Trace: 
-  Error: https://registry.yarnpkg.com/react-native-page-view: Not found
-      at Request.params.callback [as _callback] (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
-      at Request.self.callback (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
-      at Request.emit (node:events:513:28)
-      at Request.<anonymous> (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
-      at Request.emit (node:events:513:28)
-      at IncomingMessage.<anonymous> (C:\Users\dell\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
-      at Object.onceWrapper (node:events:627:28)
-      at IncomingMessage.emit (node:events:525:35)
-      at endReadableNT (node:internal/streams/readable:1358:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
-=======
   18.12.1
 
 Platform: 
@@ -51,7 +25,6 @@ Trace:
       at IncomingMessage.emit (node:events:525:35)
       at endReadableNT (node:internal/streams/readable:1359:12)
       at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
->>>>>>> minhbao-dev
 
 npm manifest: 
   {
@@ -89,10 +62,7 @@ npm manifest:
       "patch-package": "^8.0.0",
       "react": "18.2.0",
       "react-dom": "18.2.0",
-<<<<<<< HEAD
-=======
       "react-icons": "^4.12.0",
->>>>>>> minhbao-dev
       "react-native": "0.71.14",
       "react-native-feather": "^1.1.2",
       "react-native-heroicons": "^3.2.0",
@@ -10495,14 +10465,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/react-freeze/-/react-freeze-1.0.3.tgz"
     integrity sha512-ZnXwLQnGzrDpHBHiC56TXFXvmolPeMjTn1UOm610M4EXGzbEDR7oOIyS2ZiItgbs6eZc4oU/a0hpk8PrcKvv5g==
   
-<<<<<<< HEAD
-=======
   react-icons@^4.12.0:
     version "4.12.0"
     resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.12.0.tgz#54806159a966961bfd5cdb26e492f4dafd6a8d78"
     integrity sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==
   
->>>>>>> minhbao-dev
   "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^16.13.0, react-is@^16.13.1, react-is@^16.7.0:
     version "16.13.1"
     resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"

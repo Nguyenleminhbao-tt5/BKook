@@ -1,7 +1,7 @@
 export type IngredientType = {
     name: string,
     iconUrl?: string,
-    onClick?: () => string[]
+    onClick: () => string[] | void
 }
 
 export type RecipeType = {

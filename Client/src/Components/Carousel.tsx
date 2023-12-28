@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { RecipeType } from '../Screens/Home/type';
