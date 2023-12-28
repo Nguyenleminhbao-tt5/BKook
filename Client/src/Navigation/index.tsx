@@ -9,8 +9,7 @@ import { RecentCategory } from "@/Screens/Category/RecentCategory";
 import { Category } from "@/Screens/Category/Category";
 import { RecipeDetail } from "../Screens/RecipeDetail";
 import { ListProduct } from "../Screens/Home/ListProduct";
-import { HomeContainer } from "../Screens/Home";
-import { Text } from "react-native";
+
 
 export type RootStackParamList = {
   [RootScreens.MAIN]: undefined;
@@ -19,6 +18,7 @@ export type RootStackParamList = {
   [RootScreens.RECENT_CATEGORY]: undefined;
   [RootScreens.DETAIL]: undefined;
   [RootScreens.PRODUCTS]: undefined;
+  [RootScreens.LOGIN]: undefined;
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -62,6 +62,7 @@ const ApplicationNavigator = () => {
         </RootStack.Navigator>
       </NavigationContainer>
     </>
+
   );
 };
 

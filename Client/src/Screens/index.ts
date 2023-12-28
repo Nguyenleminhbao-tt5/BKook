@@ -1,10 +1,9 @@
 export enum RootScreens {
   MAIN = "Main",
   WELCOME = "Welcome",
-  DETAIL = 'Detail',
+  DETAIL = "Detail",
   PRODUCTS = 'Products',
   CATEGORY = "Category",
   RECENT_CATEGORY = "RecentCategory",
-  DETAIL = 'Detail',
-  PRODUCTS = 'Products'
+  LOGIN = "Login",
 }

@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeContainer } from "@/Screens/Home";
 import { CategoryContainer } from "@/Screens/Category/CategoryContainer";
 import { ScanContainer } from "@/Screens/Scan/ScanContainer";
+import { LoginContainer } from "../../Screens/Login";
 
 const Tab = createBottomTabNavigator();
 
@@ -38,6 +39,14 @@ export const MainNavigator = () => {
       <Tab.Screen
         name="Home 1"
         component={HomeContainer}
+        options={{
+          tabBarIconStyle: { display: "none" },
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
+      <Tab.Screen
+        name="Login"
+        component={LoginContainer}
         options={{
           tabBarIconStyle: { display: "none" },
           tabBarLabelPosition: "beside-icon",
