@@ -30,9 +30,9 @@ const ApplicationNavigator = () => {
   return (
 
     <>
-      <View className='absolute bottom-0 z-10 bg-red-500 w-full h-12'>
+      {/* <View className='absolute bottom-0 z-10 bg-red-500 w-full h-12'>
         <Text>hello</Text>
-      </View>
+      </View> */}
       <NavigationContainer>
         <StatusBar />
         <RootStack.Navigator screenOptions={{ headerShown: false }}>
