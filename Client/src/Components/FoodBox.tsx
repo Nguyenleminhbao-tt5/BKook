@@ -93,7 +93,7 @@ export const FoodBoxType2:React.FC<FoodBoxType2Props> = (props) => {
                 borderWidth: 1,
                 borderRadius: 8,
                 borderColor: 'white',
-                backgroundColor: '#2f2f2f'
+                backgroundColor: '#2f2f2f',
             }}
         >
             <ImageBackground 
@@ -129,39 +129,38 @@ export const FoodBoxType2:React.FC<FoodBoxType2Props> = (props) => {
                     <Pressable className='w-full h-full' onPress={() => navigation.navigate("Detail", {recipe})}
                         style={{
                             backgroundColor: '#797979',
-                            borderRadius: 8
+                            borderRadius: 8,
+                            display: 'flex'
                         }}
                     >
-                        <>
-                            <View className='flex-1 w-full'>
+                        <View className='flex-1 w-full'>
 
-                                <ImageBackground 
-                                    source={{uri: `${recipe.imgUrl}`}} 
-                                    resizeMode="cover"
-                                    style={{
-                                        width: '100%',
-                                        height: '100%'
-                                    }} 
-                                    className="relative flex-1"
-                                    imageStyle={{ borderTopLeftRadius: 8, borderTopRightRadius: 8}}
-                                >   
-                                    <LinearGradient
-                                        colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.1)', 'rgba(0,0,0,0.1)']}
-                                        style={{ flex: 1 }}
-                                    />  
-                                </ImageBackground>
+                            <ImageBackground 
+                                source={{uri: `${recipe.imgUrl}`}} 
+                                resizeMode="cover"
+                                style={{
+                                    width: '100%',
+                                    height: '100%'
+                                }} 
+                                className="relative flex-1"
+                                imageStyle={{ borderTopLeftRadius: 8, borderTopRightRadius: 8}}
+                            >   
+                                <LinearGradient
+                                    colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.1)', 'rgba(0,0,0,0.1)']}
+                                    style={{ flex: 1 }}
+                                />  
+                            </ImageBackground>
+                        </View>
+                        <View className='flex-1'>
+                            <View className="flex-row items-center m-2"> 
+                                <Text style={styles.subTitle}>
+                                    {recipe.name}
+                                </Text>
                             </View>
-                            <View className='flex-1'>
-                                <View className="flex-row items-center m-2"> 
-                                    <Text style={styles.subTitle}>
-                                        {recipe.name}
-                                    </Text>
-                                </View>
-                            </View>
-                        </>
+                        </View>
+                        
 
                     </Pressable>
-                
                 } />
             </View>
         </View>
@@ -173,7 +172,7 @@ export const FoodBoxType3: React.FC<FoodBoxType3Props> = (props) => {
     const {recip} = props
 
     return (
-        <View className="h-60 flex-column items-center"
+        <View className="h-60 flex-column items-center w-full"
             style={{
                 borderWidth: 1,
                 borderRadius: 8,
@@ -181,7 +180,7 @@ export const FoodBoxType3: React.FC<FoodBoxType3Props> = (props) => {
                 backgroundColor: '#2f2f2f'
             }}
         >
-            <View>
+            <View className='w-full h-full'>
                 <GridView data={recip} cols={2} renderItem={(item) =>
                     <View className='w-full h-full'>
                         <ImageBackground 
@@ -213,8 +212,7 @@ export const FoodBoxType3: React.FC<FoodBoxType3Props> = (props) => {
                             </LinearGradient>
                         </ImageBackground>
 
-                    </View>
-                
+                    </View> 
                 } />
             </View>
         </View>

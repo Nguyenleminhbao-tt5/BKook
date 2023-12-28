@@ -25,12 +25,12 @@ export const GridView = <T extends any>(props: GridViewProps<T>) => {
     }
 
     return (
-        <View style={styles.container} ref={ref}>
+        <View style={styles.container} ref={ref} className='w-full h-full'>
             {
                 data.map((item, index) => {
                     return (
                         <View key={index} style={{width: 100 / cols + '%', height: 100 / rowCount() + '%'}} >
-                            <View className={`bg-[#323232] mx-1 my-1`}
+                            <View className={`bg-[#323232] mx-1 py-1 h-full`}
                                 style={{borderRadius: 8}}
                             >
                                 {renderItem(item)}
