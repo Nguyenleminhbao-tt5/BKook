@@ -4,6 +4,7 @@ import { HomeContainer } from "@/Screens/Home";
 import { CategoryContainer } from "@/Screens/Category/CategoryContainer";
 import { ScanContainer } from "@/Screens/Scan/ScanContainer";
 import { LoginContainer } from "../../Screens/Login";
+import { RegisterContainer } from "../../Screens/Register";
 
 const Tab = createBottomTabNavigator();
 
@@ -47,6 +48,14 @@ export const MainNavigator = () => {
       <Tab.Screen
         name="Login"
         component={LoginContainer}
+        options={{
+          tabBarIconStyle: { display: "none" },
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
+      <Tab.Screen
+        name="Register"
+        component={RegisterContainer}
         options={{
           tabBarIconStyle: { display: "none" },
           tabBarLabelPosition: "beside-icon",

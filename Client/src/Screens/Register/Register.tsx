@@ -16,7 +16,7 @@ import { ButtonComponent } from "../../Components/Button";
 import { ImageComponent } from "../../Components/Image";
 import { useNavigation } from "@react-navigation/native";
 
-export const Login = () => {
+export const Register = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView
@@ -33,12 +33,17 @@ export const Login = () => {
           }}
         />
       </View>
-      <View className="flex justify-center items-center h-2/5  w-3/4">
+      <View className="flex h-3/5  w-3/4">
         <View className=" flex w-full flex-col">
+          <TextInput
+            placeholder="Name"
+            placeholderTextColor={`#9C9C9C`}
+            className="text-white border-b-2 border-white text-lg pb-1 mb-4"
+          ></TextInput>
           <TextInput
             placeholder="Email"
             placeholderTextColor={`#9C9C9C`}
-            className="text-white border-b-2 border-white text-lg pb-1 mb-4"
+            className="text-white border-b-2 border-white text-lg pb-1 my-4"
           ></TextInput>
           <TextInput
             placeholder="Password"
@@ -46,29 +51,16 @@ export const Login = () => {
             className="text-white border-b-2 border-white text-lg pb-1 my-4"
           ></TextInput>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Main")}
+            onPress={() => navigation.navigate(RootScreens.MAIN)}
             className="w-full bg-[#F66033] rounded-xl py-3 justify-center items-center my-3"
           >
-            <Text className=" text-xl text-white">Login</Text>
+            <Text className=" text-xl text-white">Register</Text>
           </TouchableOpacity>
-        </View>
-      </View>
-      <View className="w-5/6 border-b-2 border-gray-600 my-4"></View>
-      <View className="flex justify-start items-center h-1/5 w-3/4 ">
-        <View className=" flex w-full">
-          <View>
-            <TouchableOpacity
-              onPress={() => navigation.navigate(RootScreens.MAIN)}
-              className={`w-full bg-[${themeColors.bgColor}] rounded-xl py-3 justify-center items-center my-3 border border-white`}
-            >
-              <Text className=" text-lg text-white">Login with Google</Text>
-            </TouchableOpacity>
-          </View>
           <TouchableOpacity
-            onPress={() => navigation.navigate(RootScreens.REGISTER)}
+            onPress={() => navigation.navigate(RootScreens.LOGIN)}
           >
-            <Text className=" text-sm  text-[#F66033]">
-              Don't have account? Register
+            <Text className="text-sm text-[#F66033] my-2">
+              Already have an account? Login
             </Text>
           </TouchableOpacity>
         </View>

@@ -6,4 +6,6 @@ export enum RootScreens {
   CATEGORY = "Category",
   RECENT_CATEGORY = "RecentCategory",
   LOGIN = "Login",
+  REGISTER = "Register",
+  SETTING = "Setting",
 }
