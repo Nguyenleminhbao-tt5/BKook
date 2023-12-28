@@ -1,15 +1,12 @@
-import { i18n, LocalizationKey } from "@/Localization";
 import React from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { HStack, Spinner, Heading, ScrollView } from "native-base";
+import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
 import { User } from "@/Services";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MagnifyingGlassIcon, CameraIcon } from "react-native-heroicons/solid";
 import { ImageComponent } from "@/Components/Image";
 import { themeColors } from "@/Theme/Variables";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-
+import { useNavigation } from "@react-navigation/native";
 import { Inspiration } from "./Inspiration";
 import { Network } from "./Network";
 
@@ -23,6 +20,7 @@ export interface IHomeProps {
 
 export const Home = (props: IHomeProps) => {
   const { data, isLoading } = props;
+  const navigation = useNavigation()
   return (
     <SafeAreaView className={`flex-1 bg-[${themeColors.bgColor}]`}>
       <View className="m-3 flex-row justify-between items-center">
@@ -33,7 +31,7 @@ export const Home = (props: IHomeProps) => {
         />
         <View className="w-3/4 flex-1 flex-row justify-start items-center mx-3 bg-[#8C8C8C] px-2.5 h-10 rounded-lg">
           <MagnifyingGlassIcon size={26} color={"white"} />
-          <Text style={styles.input}>Go vao ten cac nguyen lieu...</Text>
+          <Pressable style={styles.input} onPress={() => navigation.navigate('Category')}>Go vao ten cac nguyen lieu...</Pressable>
         </View>
         <CameraIcon size={30} color={"white"} />
       </View>

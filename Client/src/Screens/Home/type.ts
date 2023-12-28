@@ -1,6 +1,5 @@
 export type IngredientType = {
     name: string,
-<<<<<<< HEAD
     iconUrl?: string,
     onClick?: () => string[]
 }
@@ -20,7 +19,4 @@ export type RecipeTagType = {
     name: string,
     recipeList: RecipeType[],
     thumbnail: string
-=======
-    iconUrl: string
->>>>>>> minhbao-dev
 }
