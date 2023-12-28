@@ -11,6 +11,7 @@ import { RecipeDetail } from "../Screens/RecipeDetail";
 import { ListProduct } from "../Screens/Home/ListProduct";
 import { HomeContainer } from "../Screens/Home";
 import { Text } from "react-native";
+import { Seasion } from "@/Screens/Home/Seasion";
 
 export type RootStackParamList = {
   [RootScreens.MAIN]: undefined;
@@ -19,6 +20,8 @@ export type RootStackParamList = {
   [RootScreens.RECENT_CATEGORY]: undefined;
   [RootScreens.DETAIL]: undefined;
   [RootScreens.PRODUCTS]: undefined;
+  [RootScreens.SEASION]: undefined;
+
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -59,6 +62,11 @@ const ApplicationNavigator = () => {
             component={RecentCategory}
             options={{}}
           />
+          {/* <RootStack.Screen
+            name={RootScreens.SEASION}
+            component={Seasion}
+            options={{}}
+          /> */}
         </RootStack.Navigator>
       </NavigationContainer>
     </>

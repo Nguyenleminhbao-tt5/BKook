@@ -5,6 +5,6 @@ export enum RootScreens {
   PRODUCTS = 'Products',
   CATEGORY = "Category",
   RECENT_CATEGORY = "RecentCategory",
-  DETAIL = 'Detail',
-  PRODUCTS = 'Products'
+  SEASION = "Seasion",
+  SEASION_DEATIL = "SeasonDetail"
 }

@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { tags } from '../data';
 import { GridView } from '../../../Components/GridView';
 import { LinearGradient } from 'expo-linear-gradient'
+import { Pressable } from 'react-native';
 
 
 export const Seasion = () => {
@@ -50,20 +51,24 @@ export const Seasion = () => {
 
     const renderHeader = () => (
         <View style={styles.header}>
-            <ArrowLeftIcon color={'white'} onPress={() => navigation.goBack()}/>
+            <Pressable onPress={() => navigation.navigate("Home")}>
+              <ArrowLeftIcon color={'white'}/>
+            </Pressable>
             <Text style={styles.headerText}>Đang mùa</Text>
         </View>
     );
 
     return (
-        <FlatList
-          data={test}
-          renderItem={renderItem}
-          keyExtractor={(item) => item}
-          ListHeaderComponent={renderHeader}
-          stickyHeaderIndices={[0]}
-          className="bg-[#1b1b1b]"
-        />
+        <>
+          <FlatList
+            data={test}
+            renderItem={renderItem}
+            keyExtractor={(item) => item}
+            ListHeaderComponent={renderHeader}
+            stickyHeaderIndices={[0]}
+            className="bg-[#1b1b1b]"
+          />
+        </>
     );
 };
 

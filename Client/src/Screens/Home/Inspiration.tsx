@@ -101,6 +101,7 @@ export const Inspiration = () => {
                     bgColor="#8C8C8C" 
                     width="w-full" 
                     height="h-10"
+                    onPress={() => navigattion.navigate("Seasion")}
                 />
 
             </View>
