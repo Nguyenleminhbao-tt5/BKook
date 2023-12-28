@@ -12,7 +12,7 @@ export const IngredientTag:React.FC<IngredientType> = (props) => {
     const {tagList} = useTag()
  
     const handlePress = () => {
-        onClick() 
+        onClick()
     }
 
     const checkPress = (name: string) => {

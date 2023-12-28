@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useLazyGetUserQuery } from "@/Services";
 import {Home} from "./Home";
-import { Text } from "react-native";
-import { View } from "native-base";
+import { Text, View } from "react-native";
 
 export const HomeContainer = () => {
   const [userId, setUserId] = useState("9");
@@ -19,6 +18,5 @@ export const HomeContainer = () => {
     <>
       <Home data={data} isLoading={isLoading} />
     </>
-  );
-  
+  )
 };

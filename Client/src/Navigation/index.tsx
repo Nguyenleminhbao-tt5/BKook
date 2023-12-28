@@ -6,7 +6,7 @@ import { MainNavigator } from "./Main";
 import { WelcomeContainer } from "@/Screens/Welcome";
 import { RootScreens } from "@/Screens";
 import { RecentCategory } from "@/Screens/Category/RecentCategory";
-import { Category } from "@/Screens/Category/Category"; 
+import { Category } from "@/Screens/Category/Category";
 import { RecipeDetail } from "../Screens/RecipeDetail";
 import { ListProduct } from "../Screens/Home/ListProduct";
 import { HomeContainer } from "../Screens/Home";
@@ -19,8 +19,6 @@ export type RootStackParamList = {
   [RootScreens.RECENT_CATEGORY]: undefined;
   [RootScreens.DETAIL]: undefined;
   [RootScreens.PRODUCTS]: undefined;
-
-
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -28,11 +26,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 // @refresh reset
 const ApplicationNavigator = () => {
   return (
-
     <>
-      {/* <View className='absolute bottom-0 z-10 bg-red-500 w-full h-12'>
-        <Text>hello</Text>
-      </View> */}
       <NavigationContainer>
         <StatusBar />
         <RootStack.Navigator screenOptions={{ headerShown: false }}>
@@ -42,7 +36,7 @@ const ApplicationNavigator = () => {
           />
           <RootStack.Screen
             name={RootScreens.MAIN}
-            component={HomeContainer}
+            component={MainNavigator}
             options={{}}
           />
           <RootStack.Screen
@@ -55,16 +49,16 @@ const ApplicationNavigator = () => {
             component={ListProduct}
             options={{}}
           />
-           <RootStack.Screen
-          name={RootScreens.CATEGORY}
-          component={Category}
-          options={{}}
-        />
-        <RootStack.Screen
-          name={RootScreens.RECENT_CATEGORY}
-          component={RecentCategory}
-          options={{}}
-        />
+          <RootStack.Screen
+            name={RootScreens.CATEGORY}
+            component={Category}
+            options={{}}
+          />
+          <RootStack.Screen
+            name={RootScreens.RECENT_CATEGORY}
+            component={RecentCategory}
+            options={{}}
+          />
         </RootStack.Navigator>
       </NavigationContainer>
     </>

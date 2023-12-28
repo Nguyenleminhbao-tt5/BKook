@@ -7,7 +7,7 @@ import { MagnifyingGlassIcon } from "react-native-heroicons/solid"
 import { ButtonComponent } from "../../Components/Button"
 // import { CarouselCards } from "../../Components/Carousel"
 import { GridView } from "../../Components/GridView"
-import { FoodBoxType1, FoodBoxType2, FoodBoxType3, FoodBoxType4, FoodBoxType5 } from "@/Components/FoodBox"
+import { FoodBoxType1, FoodBoxType2, FoodBoxType3, FoodBoxType4, FoodBoxType5 } from "../../Components/FoodBox"
 import { IngredientTag } from "../../Components/IngredientTag"
 import {CarouselCards} from '../../Components/Carousel'
 import { useNavigation } from "@react-navigation/native"
@@ -23,12 +23,13 @@ export const Inspiration = () => {
 
     const handlePress = (name: string) => {
         if (refTag.current.includes(name)) {
-            refTag.current = refTag.current.filter(i => i !== name)
+            refTag.current = refTag.current.filter((i:any)  => i !== name)
         }
         else if (refTag.current.length < 2) {
             refTag.current = [...refTag.current, name]
         } 
         setTagList(refTag.current)
+        
     }   
 
     function filterRecipesByIngredients(tagsArray: RecipeTagType[], ingredientsArray: string[]) {
@@ -59,7 +60,7 @@ export const Inspiration = () => {
                         {
                             Ingredients.map((ingredient, index) => (
                                 <IngredientTag name={ingredient.name} iconUrl={ingredient.iconUrl} key={index}
-                                    onClick={() => handlePress(ingredient.name)  }
+                                    onClick={() => handlePress(ingredient.name)}
                                 />
                             ))
                         }
@@ -71,45 +72,55 @@ export const Inspiration = () => {
                         renderItem={(item) => <FoodBoxType1 recip={item} />}
                     />
                 </View>
-                <View>
-                    <ButtonComponent
-                        title={"Gợi ý khác"}
-                        icon={<MagnifyingGlassIcon size={26} color={'white'}/>}
-                        bgColor="#8C8C8C"
-                        width="w-full"
-                        height="h-10"
-                        onPress={() => navigattion.navigate('Products' as never)}
-                    />
-                </View>
+                
+                <ButtonComponent
+                    title={"Gợi ý khác"}
+                    icon={<MagnifyingGlassIcon size={26} color={'white'}/>}
+                    bgColor="#8C8C8C"
+                    width="w-full"
+                    height="h-10"
+                    onPress={() => navigattion.navigate('Products' as never)}
+                />
+
             </View>
-            <View className="flex-1 justify-start items-start">
+            <View className="flex-column justify-start items-start">
                 <View className="pt-2 m-3">
                     <Text style={styles.title}>Khám phá xem thứ gì đang trong mùa nào</Text>
                 </View>
-                <View className='w-full'>
+                <View className='flex-row w-full'>
                     <CarouselCards 
                         data={tags} 
                         renderItem={(item) => <FoodBoxType2 recip={item}/>}
                     />
                 </View>
-                <ButtonComponent title={"Xem tất cả các nguyên liệu"} icon={<MagnifyingGlassIcon size={26} color={'white'}/>} bgColor="#8C8C8C" width="w-full" height="h-10"/>
+                
+                <ButtonComponent 
+                    title={"Xem tất cả các nguyên liệu"} 
+                    icon={<MagnifyingGlassIcon size={26} 
+                    color={'white'}/>} 
+                    bgColor="#8C8C8C" 
+                    width="w-full" 
+                    height="h-10"
+                />
+
             </View>
-            <View className="flex-column justify-start items-start">
-                <View className="pt-2 m-3">
+            <View className="flex-column justify-start items-start mx-3">
+                <View className="pt-2 mb-3">
                     <Text style={styles.title}>Bạn đang thèm món gì?</Text>
                     <Text style={styles.subTitle}>Không chắc? tiếp tục tạo bất ngờ</Text> 
                 </View>
-                <View className='mx-3'>
+                <View className='flex-row w-full '>
                     <FoodBoxType3 recip={tags}/>
                 </View>
-                <ButtonComponent 
+            
+            </View>
+            <ButtonComponent 
                     title={"Gợi ý khác"} 
                     icon={<MagnifyingGlassIcon size={26} color={'white'}/>}
                     bgColor="#8C8C8C"
                     width="w-full" 
                     height="h-10"
                 />
-            </View>
             <View className="flex-1 justify-start items-start">
                 <View className='mx-3 mb-3'>
                     <View className="py-3">
