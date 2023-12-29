@@ -13,7 +13,7 @@ export const Welcome = (props: {
   return (
     <View style={styles.container}>
       <OnboardFlow
-        onDone={() => props.onNavigate(RootScreens.MAIN)}
+        onDone={() => props.onNavigate(RootScreens.LOGIN)}
         pages={[
           {
             imageComponent: (
