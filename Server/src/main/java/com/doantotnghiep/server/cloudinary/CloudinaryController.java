@@ -1,6 +1,8 @@
 package com.doantotnghiep.server.cloudinary;
 
+import com.doantotnghiep.server.cloudinary.dto.FileUpload;
 import com.doantotnghiep.server.exception.ResponseException;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +19,8 @@ public class CloudinaryController {
     private final CloudinaryService cloudinaryService;
 
     @PostMapping("")
-    public String uploadImage(@ModelAttribute MultipartFile image) throws ResponseException, IOException {
-        return cloudinaryService.uploadFile(image);
+    public String uploadImage(@RequestBody FileUpload request) throws ResponseException, IOException {
+        System.out.println(request);
+        return cloudinaryService.uploadFile(request.getImage());
     }
 }

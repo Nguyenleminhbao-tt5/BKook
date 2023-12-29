@@ -3,6 +3,7 @@ package com.doantotnghiep.server.cloudinary;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.doantotnghiep.server.exception.ResponseException;
+import jakarta.xml.bind.DatatypeConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class CloudinaryService {
     @Value("${cloudinary.api_secret}")
     private String apiSecret;
 
-    public String uploadFile(MultipartFile file) throws ResponseException, IOException {
+    public String uploadFile(String file) throws ResponseException, IOException {
         try {
             Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
                     "cloud_name", cloudName,
@@ -35,11 +36,14 @@ public class CloudinaryService {
             ));
             Integer MAX_SIZE_UPLOAD = 1048576;
 
-            if (file.getSize() > MAX_SIZE_UPLOAD) {
-                throw new ResponseException("File cannot exceed 1MB", HttpStatus.BAD_REQUEST, 400);
-            }
+            byte[] imageBytes = DatatypeConverter.parseBase64Binary(file);
 
-            Map<?, ?> uploadResult = cloudinary.uploader().upload(file.getBytes(), ObjectUtils.emptyMap());
+
+//            if (file.getSize() > MAX_SIZE_UPLOAD) {
+//                throw new ResponseException("File cannot exceed 1MB", HttpStatus.BAD_REQUEST, 400);
+//            }
+
+            Map<?, ?> uploadResult = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
 
             String fileUrl = (String) uploadResult.get("secure_url");
 
