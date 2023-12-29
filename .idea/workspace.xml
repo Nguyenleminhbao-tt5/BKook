@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5073f111-e4c2-4910-a420-bfdb7ce25eb6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Client/src/Navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Navigation/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Screens/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +68,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/d003024/HVD/HK232_NAM4_2023/Mobile/BKook",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/d003024/HVD/HK232_NAM4_2023/Mobile/BKook/server/src/main/java/com/doantotnghiep/server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,9 +82,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/src/main/java/com/doantotnghiep/server" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
+        <env name="cloud_api_key" value="125998247333392" />
+        <env name="cloud_api_secret" value="ZbdQNtI-P-hP6b0uRwIey9_67iE" />
+        <env name="cloud_name" value="dyc5vrfyd" />
         <env name="db_url" value="mongodb+srv://ducvietha82:doantotnghiep@cluster0.2t7itdx.mongodb.net/doantotnghiep?retryWrites=true&amp;w=majority" />
         <env name="dbmobile_url" value="mongodb+srv://ducvietha82:havietduc@database.wjsikeq.mongodb.net/mobile?retryWrites=true&amp;w=majority" />
         <env name="mongodb+srv://ducvietha82:&lt;password&gt;@database.wjsikeq.mongodb.net/?retryWrites" value="true&amp;w=majority" />
@@ -129,6 +136,7 @@
       <workItem from="1700309331971" duration="2381000" />
       <workItem from="1700315042114" duration="2332000" />
       <workItem from="1701350504700" duration="5485000" />
+      <workItem from="1703852884615" duration="2542000" />
     </task>
     <servers />
   </component>
