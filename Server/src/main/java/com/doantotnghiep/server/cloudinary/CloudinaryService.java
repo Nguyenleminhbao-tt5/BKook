@@ -27,23 +27,15 @@ public class CloudinaryService {
     @Value("${cloudinary.api_secret}")
     private String apiSecret;
 
-    public String uploadFile(String file) throws ResponseException, IOException {
+    public String uploadFile(String base64) throws ResponseException, IOException {
         try {
             Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
                     "cloud_name", cloudName,
                     "api_key", apiKey,
                     "api_secret", apiSecret
             ));
-            Integer MAX_SIZE_UPLOAD = 1048576;
-
-            byte[] imageBytes = DatatypeConverter.parseBase64Binary(file);
-
-
-//            if (file.getSize() > MAX_SIZE_UPLOAD) {
-//                throw new ResponseException("File cannot exceed 1MB", HttpStatus.BAD_REQUEST, 400);
-//            }
-
-            Map<?, ?> uploadResult = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
+            byte[] imageBytes = DatatypeConverter.parseBase64Binary(base64);
+            Map<?, ?> uploadResult = cloudinary.uploader().upload(base64, ObjectUtils.emptyMap());
 
             String fileUrl = (String) uploadResult.get("secure_url");
 
