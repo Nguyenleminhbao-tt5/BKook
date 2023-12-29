@@ -32,15 +32,6 @@ export const MainNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Scan"
-        component={ScanContainer}
-        options={{
-          tabBarIconStyle: { display: "none" },
-          tabBarLabelPosition: "beside-icon",
-        }}
-      />
-
-      <Tab.Screen
         name="Home 1"
         component={HomeContainer}
         options={{
