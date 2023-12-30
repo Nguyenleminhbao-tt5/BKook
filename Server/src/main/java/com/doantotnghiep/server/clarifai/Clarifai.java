@@ -5,7 +5,9 @@ import com.clarifai.grpc.api.*;
 import com.clarifai.channel.ClarifaiChannel;
 import com.clarifai.credentials.ClarifaiCallCredentials;
 import com.clarifai.grpc.api.status.StatusCode;
+import com.doantotnghiep.server.exception.ResponseException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
@@ -25,7 +27,7 @@ public class Clarifai {
     static final String MODEL_VERSION_ID = "1d5fd481e0cf4826aa72ec3ff049e044";
 
 
-    public List<String> generateIngredient(String imageUrl) {
+    public List<String> generateIngredient(String imageUrl) throws ResponseException {
 
         V2Grpc.V2BlockingStub stub = V2Grpc.newBlockingStub(ClarifaiChannel.INSTANCE.getGrpcChannel())
                 .withCallCredentials(new ClarifaiCallCredentials(PAT));
@@ -46,7 +48,7 @@ public class Clarifai {
         );
 
         if (postModelOutputsResponse.getStatus().getCode() != StatusCode.SUCCESS) {
-            throw new RuntimeException("Post model outputs failed, status: " + postModelOutputsResponse.getStatus());
+            throw new ResponseException("Post model outputs failed, status: " + postModelOutputsResponse.getStatus(), HttpStatus.BAD_REQUEST, 400);
         }
 
         Output output = postModelOutputsResponse.getOutputs(0);
