@@ -27,7 +27,7 @@ const foodRecognize = async (image_url) => {
                 },
                 workflow_id: WORKFLOW_ID,
                 inputs: [
-                    { data: { image: { url: IMAGE_URL } } }
+                    { data: { image: { base64: IMAGE_URL } } }
                 ]
             },
             metadata,
@@ -50,7 +50,7 @@ const foodRecognize = async (image_url) => {
                         results.push(concept.name);
                     }
                 }
-
+                console.log('food',results);
                 resolve(results.slice(0, 5));
 
             }

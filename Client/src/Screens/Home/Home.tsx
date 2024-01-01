@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Pressable,
+  TouchableOpacity,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { HStack, Spinner, Heading } from "native-base";
 import { User } from "@/Services";
@@ -11,7 +18,6 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { useNavigation } from "@react-navigation/native";
 import { Inspiration } from "./Inspiration";
 import { Network } from "./Network";
-
 
 const Toptabs = createMaterialTopTabNavigator();
 
@@ -26,7 +32,7 @@ export const Home = (props: IHomeProps) => {
   return (
     <SafeAreaView className={`flex-1 bg-[${themeColors.bgColor}] pb-12`}>
       <View className="m-3 flex-row justify-between items-center">
-        <Pressable onPress={()=>navigation.navigate('Setting' as never)}>
+        <Pressable onPress={() => navigation.navigate("Setting" as never)}>
           <ImageComponent
             source={{ uri: "https://source.unsplash.com/random" }}
             variant="circle"
@@ -35,9 +41,16 @@ export const Home = (props: IHomeProps) => {
         </Pressable>
         <View className="w-3/4 flex-1 flex-row justify-start items-center mx-3 bg-[#8C8C8C] px-2.5 h-10 rounded-lg">
           <MagnifyingGlassIcon size={26} color={"white"} />
-          <Pressable style={styles.input} onPress={() => navigation.navigate('Category' as never)}>Go vao ten cac nguyen lieu...</Pressable>
+          <Pressable
+            style={styles.input}
+            onPress={() => navigation.navigate("Category" as never)}
+          >
+            <View>Go vao ten cac nguyen lieu...</View>
+          </Pressable>
         </View>
-        <CameraIcon size={30} color={"white"} />
+        <TouchableOpacity onPress={()=>navigation.navigate("Scan" as never)}>
+          <CameraIcon size={30} color={"white"} />
+        </TouchableOpacity>
       </View>
       <Toptabs.Navigator
         screenOptions={{
