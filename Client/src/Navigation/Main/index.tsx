@@ -4,15 +4,14 @@ import { HomeContainer } from "@/Screens/Home";
 import { CategoryContainer } from "@/Screens/Category/CategoryContainer";
 import { Seasion } from "@/Screens/Home/Seasion";
 import { BottomTabBar } from '@react-navigation/bottom-tabs'
-
-import { ScanContainer } from "@/Screens/Scan/ScanContainer";
-import { LoginContainer } from "../../Screens/Login";
-import { RegisterContainer } from "../../Screens/Register";
-import { RecipeDetail } from "@/Screens/RecipeDetail";
+import { IoMdAddCircleOutline } from "react-icons/io";
+import { RiHome2Line } from "react-icons/ri";
+import { IoSearchOutline } from "react-icons/io5";
 import { CreateFood } from "@/Screens/Profile/CreateFood";
 import { DetailSaveDishesScreen } from "@/Screens/Profile/DetailSaveDishesScreen";
 import { CategorySearch } from "@/Screens/Category/CategorySearch";
 import { ProfileContainer } from "@/Screens/Profile";
+import { LuUserCircle } from "react-icons/lu";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,6 +38,8 @@ export const MainNavigator = () => {
         component={HomeContainer}
         options={{
           tabBarLabel: "Home",
+          tabBarIcon:({ color, size }) => (
+            <RiHome2Line  name="home" color={color} size={size} />)
         }}
       />
       <Tab.Screen
@@ -47,6 +48,8 @@ export const MainNavigator = () => {
         initialParams={{state: {status: false}}}
         options={{
           tabBarLabel: "Search",
+          tabBarIcon:({ color, size }) => (
+            <IoSearchOutline  name="search" color={color} size={size} />)
         }}
 
       />
@@ -55,6 +58,8 @@ export const MainNavigator = () => {
         component={CreateFood}
         options={{
           tabBarLabel: "Post",
+          tabBarIcon:({ color, size }) => (
+            <IoMdAddCircleOutline  name="post" color={color} size={size} />)
         }}
       />
       <Tab.Screen
@@ -83,6 +88,8 @@ export const MainNavigator = () => {
         component={ProfileContainer}
         options={{
           tabBarLabel: "Profile",
+          tabBarIcon:({ color, size }) => (
+            <LuUserCircle  name="profile" color={color} size={size} />)
         }}
       />
     </Tab.Navigator>

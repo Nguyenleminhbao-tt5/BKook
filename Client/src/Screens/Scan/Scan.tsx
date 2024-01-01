@@ -19,6 +19,15 @@ const Scan = () => {
   const [image, setImage] = useState<string>("");
   const cameraRef = useRef(null);
   const navigation = useNavigation();
+
+  const convertFunc = (ingredients: string[]) => {
+    if (ingredients.includes("chicken")) return "gà";
+    else if (ingredients.includes("grape")) return "nho";
+    else if (ingredients.includes("beef")) return "thịt bò";
+    else if (ingredients.includes("pork")) return "thịt heo";
+    else if (ingredients.includes("meat")) return "thịt heo";
+    else return "";
+  };
   if (!permission) {
     // Camera permissions are still loading
     return <View />;
@@ -52,12 +61,13 @@ const Scan = () => {
           }
         );
         setImage(upload.data);
-        console.log(upload.data.ingredients.slice(0,2))
-        const ingredients = upload.data.ingredients.slice(0,2);
-        
-        navigation.navigate('CategorySearch', {input: ingredients[1] })
-
-
+        console.log(upload.data.ingredients.slice(0, 5));
+        const ingredients = upload.data.ingredients.slice(0, 5);
+        const result = convertFunc(ingredients);
+        console.log("result", result)
+        if (result.length > 0) {
+          navigation.navigate("CategorySearch", { input: result });
+        }
       } catch (err) {
         throw err;
       }
@@ -67,7 +77,11 @@ const Scan = () => {
     <View style={styles.container}>
       <Camera style={styles.camera} type={type} ref={cameraRef}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity className=" relative" style={styles.button} onPress={takePicture}>
+          <TouchableOpacity
+            className=" relative"
+            style={styles.button}
+            onPress={takePicture}
+          >
             <View className=" rounded-full w-[70px] h-[70px] bg-[#f1f1f1]"></View>
           </TouchableOpacity>
         </View>
