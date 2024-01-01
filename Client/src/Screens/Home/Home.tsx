@@ -45,7 +45,7 @@ export const Home = (props: IHomeProps) => {
             style={styles.input}
             onPress={() => navigation.navigate("Category" as never)}
           >
-            Go vao ten cac nguyen lieu...
+            <View>Go vao ten cac nguyen lieu...</View>
           </Pressable>
         </View>
         <TouchableOpacity onPress={()=>navigation.navigate("Scan" as never)}>
