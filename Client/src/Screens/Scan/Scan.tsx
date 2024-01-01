@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import foodRecognize from "./FoodRecognition";
 import { Camera, CameraType } from "expo-camera";
 import {
   Button,

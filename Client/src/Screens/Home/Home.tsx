@@ -26,11 +26,18 @@ export interface IHomeProps {
   isLoading: boolean;
 }
 
+type StateType = {
+  status: boolean;
+};
+
 export const Home = (props: IHomeProps) => {
   const navigation = useNavigation();
   const { data, isLoading } = props;
+
+  const state: StateType = { status: false };
+
   return (
-    <SafeAreaView className={`flex-1 bg-[${themeColors.bgColor}] pb-12`}>
+    <SafeAreaView className={`flex-1 bg-[${themeColors.bgColor}]`}>
       <View className="m-3 flex-row justify-between items-center">
         <Pressable onPress={() => navigation.navigate("Setting" as never)}>
           <ImageComponent
@@ -43,12 +50,12 @@ export const Home = (props: IHomeProps) => {
           <MagnifyingGlassIcon size={26} color={"white"} />
           <Pressable
             style={styles.input}
-            onPress={() => navigation.navigate("Category" as never)}
+            onPress={() => navigation.navigate("Search", { state })}
           >
-            <View>Go vao ten cac nguyen lieu...</View>
+            <Text className="text-white">Gõ vào tên các nguyên liệu...</Text>
           </Pressable>
         </View>
-        <TouchableOpacity onPress={()=>navigation.navigate("Scan" as never)}>
+        <TouchableOpacity onPress={() => navigation.navigate("Scan" as never)}>
           <CameraIcon size={30} color={"white"} />
         </TouchableOpacity>
       </View>
