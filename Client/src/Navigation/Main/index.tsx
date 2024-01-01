@@ -22,6 +22,7 @@ export const MainNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarButton: [
           "Detail",
           "Seasion",

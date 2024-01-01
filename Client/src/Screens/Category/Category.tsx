@@ -54,7 +54,7 @@ export const Category = (props: IHomeProps) => {
         <View className={`bg-[${themeColors.bgColor}] flex-1`}>
             <View className="m-3 flex-row justify-between items-center relative">
                 <Pressable className='w-3/4 flex-1 flex-row justify-start items-center mx-1 bg-[#8C8C8C] px-2.5 h-12 rounded-lg '
-                    onPress={() => setFocus(true)}            >
+                    onPress={() => {setFocus(true)}}            >
                     <MagnifyingGlassIcon size={26} color={"white"} />
                     <Text style={{
                             color: 'white',

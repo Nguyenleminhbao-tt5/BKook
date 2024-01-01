@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import * as Media from "expo-media-library";
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 const Scan = () => {
   const [listFood, setFood] = useState<string[]>([]);
@@ -17,6 +18,7 @@ const Scan = () => {
   const [type, setType] = useState(CameraType.back);
   const [image, setImage] = useState<string>("");
   const cameraRef = useRef(null);
+  const navigation = useNavigation();
   if (!permission) {
     // Camera permissions are still loading
     return <View />;
@@ -43,8 +45,6 @@ const Scan = () => {
     if (cameraRef)
       try {
         const data = await cameraRef?.current?.takePictureAsync();
-        console.log("camera");
-        console.log(data, typeof data);
         const upload = await axios.post(
           "https://bkook-production.up.railway.app/api/upload",
           {
@@ -52,8 +52,10 @@ const Scan = () => {
           }
         );
         setImage(upload.data);
-
-        console.log(upload.data)
+        console.log(upload.data.ingredients.slice(0,2))
+        const ingredients = upload.data.ingredients.slice(0,2);
+        
+        navigation.navigate('CategorySearch', {input: ingredients[1] })
 
 
       } catch (err) {
@@ -65,21 +67,9 @@ const Scan = () => {
     <View style={styles.container}>
       <Camera style={styles.camera} type={type} ref={cameraRef}>
         <View style={styles.buttonContainer}>
-          {/* <TouchableOpacity style={styles.button} onPress={toggleCamera}>
-            <Text style={styles.text}>Flip Camera</Text>
-          </TouchableOpacity> */}
-          <TouchableOpacity style={styles.button} onPress={takePicture}>
-            <Text style={styles.text}>take Camera</Text>
+          <TouchableOpacity className=" relative" style={styles.button} onPress={takePicture}>
+            <View className=" rounded-full w-[70px] h-[70px] bg-[#f1f1f1]"></View>
           </TouchableOpacity>
-          <Image
-            source={{
-              uri:
-                image != ""
-                  ? image
-                  : "https://th.bing.com/th/id/OIG.b7fbyFnoRp_h0eDim7rl",
-            }}
-            className="w-[300px] h-[300px]"
-          />
         </View>
       </Camera>
     </View>
