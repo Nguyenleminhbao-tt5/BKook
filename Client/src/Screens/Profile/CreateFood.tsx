@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 import { MagnifyingGlassIcon, EllipsisVerticalIcon, EllipsisHorizontalIcon } from 'react-native-heroicons/solid'
 import { Cog6ToothIcon, CameraIcon, HeartIcon, ArrowSmallLeftIcon, BookmarkIcon } from 'react-native-heroicons/outline'
 
-export default function CreateFood() {
+export const CreateFood = () => {
     const [ingredients, setIngredients] = useState(['']); // State to manage ingredients
     const [steps, setSteps] = useState([{ step: 1, description: '' }]); // State to manage steps
     const addIngredient = () => {
         const newIngredients = [...ingredients, ''];
         setIngredients(newIngredients);
     }
-    const deleteStep = (index) => {
+    const deleteStep = (index:any) => {
         Alert.alert(
             'Xác nhận xóa bước làm',
             'Bạn có muốn xóa bước làm này không?',

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react"
 import { Text,View, StyleSheet, ScrollView, Image, ImageBackground } from "react-native"
-import { Ingredients, recipe, tags } from "./data"
+import { Ingredients, tags } from "./data"
 import { MagnifyingGlassIcon } from "react-native-heroicons/solid"
 import { ButtonComponent } from "../../Components/Button"
 // import { CarouselCards } from "../../Components/Carousel"
@@ -41,11 +41,7 @@ export const Inspiration = () => {
             const resultList = filteredTags[0].recipeList.filter(item => item.ingredient.includes(ingredientsArray[1]))
             return resultList
         }
-        return filteredTags[0].recipeList
-    }
-
-    const filterSeason = (tagsArray: RecipeTagType[]) => {
-        
+        return filteredTags[0].recipeList 
     }
 
     return (
@@ -101,6 +97,7 @@ export const Inspiration = () => {
                     bgColor="#8C8C8C" 
                     width="w-full" 
                     height="h-10"
+                    onPress={() => navigattion.navigate('Seasion' as never)}
                 />
 
             </View>
@@ -121,35 +118,23 @@ export const Inspiration = () => {
                     width="w-full" 
                     height="h-10"
                 />
-            <View className="flex-1 justify-start items-start">
-                <View className='mx-3 mb-3'>
-                    <View className="py-3">
-                        <Text style={styles.title}>Món mới nhất</Text>
-                    </View>
-                    <View className='w-full'>
-                        <GridView data={tags.flatMap(tag => tag.recipeList)} cols={2} renderItem={(item) =>
-                            <FoodBoxType4 recip={item}/>
-                        } />
-                    </View>
-                </View>
-            </View>
             <View className="flex-column justify-start items-start mb-3">
                 <View className="pt-2 m-3">
                     <Text style={styles.title}>Bí quyết nấu ăn</Text>
                 </View>
                 <View className='w-full'>
                     <CarouselCards 
-                        data={recipe} 
+                        data={tags} 
                         renderItem={(item) => <FoodBoxType5 />}
                     />
                 </View>
             </View>
             <View className="flex-1 justify-start items-start">
-                <View className='mx-3 mb-3'>
-                    <View className="py-3">
+                <View className='m-2'>
+                    <View className='mt-2 mb-4 mx-1'>
                         <Text style={styles.title}>Món mới nhất</Text>
                     </View>
-                    <View className='w-full'>
+                    <View className='w-full pb-24'>
                         <GridView data={tags.flatMap(tag => tag.recipeList)} cols={2} renderItem={(item) =>
                             <FoodBoxType4 recip={item}/>
                         } />

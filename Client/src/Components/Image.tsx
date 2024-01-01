@@ -5,6 +5,7 @@ import tailwind from "twrnc";
   interface ImageProps extends DefaultImageProps {
     variant?: "default" | "rounded" | "circle";
     size?: "xxs" | "xs" | "sm" | "md" | "lg" | "xl";
+    rounded?: 'rounded' | 'rounded-md' | 'rounded-lg' | 'rounded-full'
   }
 
 export const ImageComponent = ({variant = "default",size = "md", ...props}: ImageProps) => {

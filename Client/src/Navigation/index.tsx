@@ -25,7 +25,6 @@ export type RootStackParamList = {
   [RootScreens.REGISTER]: undefined;
   [RootScreens.SETTING]: undefined;
   [RootScreens.SCAN]: undefined;
-
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -60,28 +59,19 @@ const ApplicationNavigator = () => {
             options={{}}
           />
           <RootStack.Screen
-            name={RootScreens.DETAIL}
-            component={RecipeDetail}
+            name={RootScreens.SCAN}
+            component={ScanContainer}
             options={{}}
           />
+
           <RootStack.Screen
             name={RootScreens.PRODUCTS}
             component={ListProduct}
             options={{}}
           />
           <RootStack.Screen
-            name={RootScreens.CATEGORY}
-            component={Category}
-            options={{}}
-          />
-          <RootStack.Screen
             name={RootScreens.RECENT_CATEGORY}
             component={RecentCategory}
-            options={{}}
-          />
-           <RootStack.Screen
-            name={RootScreens.SCAN}
-            component={ScanContainer}
             options={{}}
           />
         </RootStack.Navigator>

@@ -1,5 +1,5 @@
 import React from "react";
-import { i18n, LocalizationKey } from "@/Localization";
+// import { i18n, LocalizationKey } from "@/Localization";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Button } from "native-base";
@@ -13,6 +13,7 @@ export const Welcome = (props: {
   return (
     <View style={styles.container}>
       <OnboardFlow
+        // onDone={() => props.onNavigate(RootScreens.MAIN)}
         onDone={() => props.onNavigate(RootScreens.LOGIN)}
         pages={[
           {
@@ -108,4 +109,8 @@ const styles = StyleSheet.create({
     height: 300,
     width: "100vw",
   },
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> minhbao-dev
