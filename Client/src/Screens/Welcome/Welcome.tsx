@@ -109,8 +109,4 @@ const styles = StyleSheet.create({
     height: 300,
     width: "100vw",
   },
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> minhbao-dev
